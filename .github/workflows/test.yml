@@ -15,6 +15,9 @@ jobs:
           ls -l /proc/sys/net/
           sudo modprobe mpls_iptunnel
           ls -l /proc/sys/net/mpls
-          sudo apt install -y frr
-          sudo python3 -V
-          sudo python3 -m pip install nitk-nest
+          curl -s https://deb.frrouting.org/frr/keys.asc | sudo apt-key add -
+          FRRVER="frr-stable"
+          echo deb https://deb.frrouting.org/frr $(lsb_release -s -c) $FRRVER | sudo tee -a /etc/apt/sources.list.d/frr.list
+          sudo apt update && sudo apt install frr frr-pythontools
+          sudo -H python3 -V
+          sudo -H python3 -m pip install nitk-nest
