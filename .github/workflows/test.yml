@@ -9,8 +9,10 @@ jobs:
     steps:
       - name: check kernel
         run: |
+          sudo su root
           uname -a
           cat /etc/os-release
           ls -l /proc/sys/net/
-          sudo modprobe mpls_iptunnel
-          ls -l /proc/sys/net/
+          modprobe mpls_iptunnel
+          ls -l /proc/sys/net/mpls
+          apt install -y frr
