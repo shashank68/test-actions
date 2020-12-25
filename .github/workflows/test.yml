@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check kernel
-      - run: |
-        uname -a
-        cat /etc/os-release
-        ls -l /proc/sys/net/
-        modprobe mpls_iptunnel
-        ls -l /proc/sys/net/
+        run: |
+          uname -a
+          cat /etc/os-release
+          ls -l /proc/sys/net/
+          modprobe mpls_iptunnel
+          ls -l /proc/sys/net/
