@@ -1,0 +1,16 @@
+name: Super-Linter
+
+# Run this workflow every time a new commit pushed to your repository
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check kernel
+      - run: |
+        uname -a
+        cat /etc/os-release
+        ls -l /proc/sys/net/
+        modprobe mpls_iptunnel
+        ls -l /proc/sys/net/
