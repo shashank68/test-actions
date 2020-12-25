@@ -12,5 +12,5 @@ jobs:
           uname -a
           cat /etc/os-release
           ls -l /proc/sys/net/
-          modprobe mpls_iptunnel
+          sudo modprobe mpls_iptunnel
           ls -l /proc/sys/net/
