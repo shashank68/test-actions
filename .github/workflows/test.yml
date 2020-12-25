@@ -13,6 +13,8 @@ jobs:
           uname -a
           cat /etc/os-release
           ls -l /proc/sys/net/
-          modprobe mpls_iptunnel
+          sudo modprobe mpls_iptunnel
           ls -l /proc/sys/net/mpls
-          apt install -y frr
+          sudo apt install -y frr
+          sudo python3 -V
+          sudo python3 -m pip install nitk-nest
